@@ -1,7 +1,17 @@
 {% if latest_question_list %}
     <ul>
         {% for question in latest_question_list %}
+        
+        {% comment %}
+            Avoid hardcoded URLs in templates!!!
             <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+        {% endcomment %}
+            
+            <li>
+                <a href="{% url 'polls:detail' question.id %}">
+                    {{ question.question_text}}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 {% else %}

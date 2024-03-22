@@ -4,13 +4,16 @@
 from django.urls import path
 from . import views
 
+# Name-spacing URL names
+app_name = "polls"
+
+
 # path() argument: ROUTE
 ###############################
 # When processing a request, Django starts at the first pattern 
 #in urlpatterns and makes its way down the list, 
 #comparing the requested URL against each pattern until 
 #it finds one that matches.
-
 
 # path() argument: VIEW
 ###############################
