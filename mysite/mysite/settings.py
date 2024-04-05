@@ -52,10 +52,20 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+'''
+We could have all our templates together, 
+in one big templates directory, and it would work 
+perfectly well. However, templates that belong to 
+a particular application should be placed in 
+that application’s template directory 
+(e.g. polls/templates) rather than the 
+project’s (templates). 
+'''
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
